@@ -1,4 +1,4 @@
-mod cvector;
+pub mod cvector;
 
 #[cfg(test)]
 mod tests {
