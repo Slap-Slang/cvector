@@ -8,6 +8,12 @@ impl TooF64 for u32 {
     }
 }
 
+impl TooF64 for i32 {
+    fn too_f64(&self) -> f64 {
+        *self as f64
+    }
+}
+
 impl TooF64 for f32 {
     fn too_f64(&self) -> f64 {
         *self as f64
@@ -19,6 +25,7 @@ impl TooF64 for f64 {
         *self
     }
 }
+
 pub struct CVector {
     x: f64,
     y: f64,

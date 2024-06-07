@@ -35,4 +35,23 @@ mod tests {
         assert_eq!(test_vec0.x(), 30.0);
         assert_eq!(test_vec0.y(), 15.0);
     }
+
+    #[test]
+    fn generic_creation_test() {
+        let cv0 = CVector::new(10, 10);
+        assert_eq!(cv0.x(), 10.0);
+        assert_eq!(cv0.y(), 10.0);
+
+        let cv1 = CVector::new(-10, -10);
+        assert_eq!(cv1.x(), -10.0);
+        assert_eq!(cv1.y(), -10.0);
+
+        let cv2 = CVector::new(10.0, 10.0);
+        assert_eq!(cv2.x(), 10.0);
+        assert_eq!(cv2.y(), 10.0);
+
+        let cv3 = CVector::new(-10.0, -10.0);
+        assert_eq!(cv3.x(), -10.0);
+        assert_eq!(cv3.y(), -10.0);
+    }
 }
