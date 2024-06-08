@@ -34,7 +34,7 @@ pub struct CVector {
 impl CVector {
     pub fn new<T>(x: T, y: T) -> CVector
     where
-        T: PartialOrd + Copy + TooF64,
+        T: Copy + TooF64,
     {
         let x = x.too_f64();
         let y = y.too_f64();
@@ -61,7 +61,7 @@ impl CVector {
 
     pub fn sub(&mut self, other: &CVector) {
         self.x -= other.x();
-        self.x -= other.y();
+        self.y -= other.y();
     }
 
     pub fn normalise(&mut self) {
@@ -72,7 +72,7 @@ impl CVector {
 
     pub fn mult_mag<T>(&mut self, multiple: T)
     where
-        T: PartialOrd + Copy + TooF64,
+        T: Copy + TooF64,
     {
         let multiple = multiple.too_f64();
 
@@ -82,7 +82,7 @@ impl CVector {
 
     pub fn set_mag<T>(&mut self, new_mag: T)
     where
-        T: PartialOrd + Copy + TooF64,
+        T: Copy + TooF64,
     {
         let new_mag = new_mag.too_f64();
         self.normalise();
