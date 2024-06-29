@@ -46,6 +46,13 @@ impl CVector {
         self.x
     }
 
+    pub fn set_x<T>(&mut self, new_x: T)
+    where
+        T: Copy + TooF64,
+    {
+        self.x = new_x.too_f64();
+    }
+
     pub fn mult_x<T>(&mut self, multiple: T)
     where
         T: Copy + TooF64,
@@ -58,12 +65,27 @@ impl CVector {
         self.y
     }
 
+    pub fn set_y<T>(&mut self, new_y: T)
+    where
+        T: Copy + TooF64,
+    {
+        self.y = new_y.too_f64();
+    }
+
     pub fn mult_y<T>(&mut self, multiple: T)
     where
         T: Copy + TooF64,
     {
         let multiple = multiple.too_f64();
         self.y *= multiple;
+    }
+
+    pub fn reset<T>(&mut self, new_x: T, new_y: T)
+    where
+        T: Copy + TooF64,
+    {
+        self.set_x(new_x);
+        self.set_y(new_y);
     }
 
     pub fn mag(&self) -> f64 {
